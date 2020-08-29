@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.alexmmd.DynamicDatasourceApplication;
+import top.alexmmd.domain.OrderDO;
 
 /**
  * @author 汪永晖
@@ -15,27 +16,16 @@ public class OrderServiceTest {
     private OrderService orderService;
 
     @Test
-    public void testMethod01() {
-        orderService.method01();
+    public void testAdd() {
+        OrderDO order = new OrderDO();
+        order.setUserId(20);
+        orderService.add(order);
     }
 
     @Test
-    public void testMethod02() {
-        orderService.method02();
+    public void testFindById() {
+        OrderDO order = orderService.findById(1);
+        System.out.println(order);
     }
 
-    @Test
-    public void testMethod03() {
-        orderService.method03();
-    }
-
-    @Test
-    public void testMethod04() {
-        orderService.method04();
-    }
-
-    @Test
-    public void testMethod05() {
-        orderService.method05();
-    }
 }

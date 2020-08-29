@@ -18,8 +18,18 @@ public class OrderMapperTest {
 
     @Test
     public void testSelectById() {
-        OrderDO order = orderMapper.selectById(1);
-        System.out.println(order);
+        for (int i = 0; i < 10; i++) {
+            OrderDO order = orderMapper.selectById(1);
+            System.out.println(order);
+        }
     }
+
+    @Test
+    public void testInsert() {
+        OrderDO order = new OrderDO();
+        order.setUserId(10);
+        orderMapper.insert(order);
+    }
+
 
 }

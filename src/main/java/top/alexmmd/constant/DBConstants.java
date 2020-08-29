@@ -8,13 +8,13 @@ package top.alexmmd.constant;
 public class DBConstants {
 
     /**
-     * 数据源分组 - 订单库
+     * 数据源分组 - 订单库 - 主库
      */
-    public static final String DATASOURCE_ORDERS = "orders";
+    public static final String DATASOURCE_MASTER = "master";
 
     /**
-     * 数据源分组 - 用户库
+     * 数据源分组 - 订单库 - 从库
      */
-    public static final String DATASOURCE_USERS = "users";
+    public static final String DATASOURCE_SLAVE = "slave";
 
 }

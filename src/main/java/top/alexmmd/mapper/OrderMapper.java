@@ -10,9 +10,12 @@ import top.alexmmd.domain.OrderDO;
  * @author 汪永晖
  */
 @Repository
-@DS(DBConstants.DATASOURCE_ORDERS)
 public interface OrderMapper {
 
+    @DS(DBConstants.DATASOURCE_SLAVE)
     OrderDO selectById(@Param("id") Integer id);
+
+    @DS(DBConstants.DATASOURCE_MASTER)
+    int insert(OrderDO entity);
 
 }
