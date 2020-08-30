@@ -7,7 +7,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy(exposeProxy = true)
-@MapperScan(basePackages = "top.alexmmd.mapper")
 public class DynamicDatasourceApplication {
 
     public static void main(String[] args) {
