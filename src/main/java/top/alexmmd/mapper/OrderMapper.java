@@ -12,4 +12,6 @@ public interface OrderMapper {
 
     OrderDO selectById(@Param("id") Integer id);
 
+    int insert(OrderDO entity);
+
 }

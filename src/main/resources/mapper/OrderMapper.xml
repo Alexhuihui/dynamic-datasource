@@ -13,4 +13,12 @@
         WHERE id = #{id}
     </select>
 
+    <insert id="insert" parameterType="top.alexmmd.domain.OrderDO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO orders (
+          user_id
+        ) VALUES (
+          #{userId}
+        )
+    </insert>
+
 </mapper>
