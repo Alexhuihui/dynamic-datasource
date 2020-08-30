@@ -31,7 +31,13 @@ public class OrderServiceTest {
     }
 
     @Test
+    public void testMethod04() {
+        orderService.method04();
+    }
+
+    @Test
     public void testMethod05() {
         orderService.method05();
     }
+
 }

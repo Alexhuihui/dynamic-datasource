@@ -4,16 +4,15 @@ import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import top.alexmmd.constant.DBConstants;
 import top.alexmmd.domain.OrderDO;
 import top.alexmmd.domain.UserDO;
-import top.alexmmd.mapper.orders.OrderMapper;
+import top.alexmmd.mapper.OrderMapper;
 
 /**
  * @author 汪永晖
  */
 import org.springframework.transaction.annotation.Propagation;
-import top.alexmmd.mapper.users.UserMapper;
+import top.alexmmd.mapper.UserMapper;
 
 @Service
 public class OrderService {
@@ -36,7 +35,7 @@ public class OrderService {
         System.out.println(user);
     }
 
-    @Transactional // 报错，找不到事务管理器
+    @Transactional
     public void method02() {
         // 查询订单
         OrderDO order = orderMapper.selectById(1);
@@ -53,19 +52,38 @@ public class OrderService {
         self().method032();
     }
 
-    @Transactional(transactionManager = DBConstants.TX_MANAGER_ORDERS)
+    @Transactional // 报错，因为此时获取的是 primary 对应的 DataSource ，即 users 。
     public void method031() {
         OrderDO order = orderMapper.selectById(1);
         System.out.println(order);
     }
 
-    @Transactional(transactionManager = DBConstants.TX_MANAGER_USERS)
+    @Transactional
     public void method032() {
         UserDO user = userMapper.selectById(1);
         System.out.println(user);
     }
 
-    @Transactional(transactionManager = DBConstants.TX_MANAGER_ORDERS)
+    public void method04() {
+        // 查询订单
+        self().method041();
+        // 查询用户
+        self().method042();
+    }
+
+    @Transactional
+    public void method041() {
+        OrderDO order = orderMapper.selectById(1);
+        System.out.println(order);
+    }
+
+    @Transactional
+    public void method042() {
+        UserDO user = userMapper.selectById(1);
+        System.out.println(user);
+    }
+
+    @Transactional
     public void method05() {
         // 查询订单
         OrderDO order = orderMapper.selectById(1);
@@ -74,8 +92,7 @@ public class OrderService {
         self().method052();
     }
 
-    @Transactional(transactionManager = DBConstants.TX_MANAGER_USERS,
-            propagation = Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void method052() {
         UserDO user = userMapper.selectById(1);
         System.out.println(user);

@@ -1,4 +1,4 @@
-package top.alexmmd.mapper.users;
+package top.alexmmd.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;

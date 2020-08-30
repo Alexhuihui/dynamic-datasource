@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.alexmmd.DynamicDatasourceApplication;
 import top.alexmmd.domain.OrderDO;
-import top.alexmmd.mapper.orders.OrderMapper;
 
 @SpringBootTest(classes = DynamicDatasourceApplication.class)
 public class OrderMapperTest {

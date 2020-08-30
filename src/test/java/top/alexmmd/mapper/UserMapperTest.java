@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.alexmmd.DynamicDatasourceApplication;
 import top.alexmmd.domain.UserDO;
-import top.alexmmd.mapper.users.UserMapper;
 
 /**
  * @author 汪永晖
