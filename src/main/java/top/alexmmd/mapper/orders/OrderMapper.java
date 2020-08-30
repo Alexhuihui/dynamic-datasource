@@ -1,9 +1,7 @@
-package top.alexmmd.mapper;
+package top.alexmmd.mapper.orders;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-import top.alexmmd.constant.DBConstants;
 import top.alexmmd.domain.OrderDO;
 
 /**
@@ -12,10 +10,6 @@ import top.alexmmd.domain.OrderDO;
 @Repository
 public interface OrderMapper {
 
-    @DS(DBConstants.DATASOURCE_SLAVE)
     OrderDO selectById(@Param("id") Integer id);
-
-    @DS(DBConstants.DATASOURCE_MASTER)
-    int insert(OrderDO entity);
 
 }

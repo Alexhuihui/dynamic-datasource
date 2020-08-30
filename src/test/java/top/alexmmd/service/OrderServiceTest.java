@@ -16,16 +16,22 @@ public class OrderServiceTest {
     private OrderService orderService;
 
     @Test
-    public void testAdd() {
-        OrderDO order = new OrderDO();
-        order.setUserId(20);
-        orderService.add(order);
+    public void testMethod01() {
+        orderService.method01();
     }
 
     @Test
-    public void testFindById() {
-        OrderDO order = orderService.findById(1);
-        System.out.println(order);
+    public void testMethod02() {
+        orderService.method02();
     }
 
+    @Test
+    public void testMethod03() {
+        orderService.method03();
+    }
+
+    @Test
+    public void testMethod05() {
+        orderService.method05();
+    }
 }

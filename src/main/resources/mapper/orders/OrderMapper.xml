@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.alexmmd.mapper.OrderMapper">
+<mapper namespace="top.alexmmd.mapper.orders.OrderMapper">
 
     <sql id="FIELDS">
         id, user_id AS userId
@@ -12,13 +12,5 @@
         FROM orders
         WHERE id = #{id}
     </select>
-
-    <insert id="insert" parameterType="top.alexmmd.domain.OrderDO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO orders (
-          user_id
-        ) VALUES (
-          #{userId}
-        )
-    </insert>
 
 </mapper>
